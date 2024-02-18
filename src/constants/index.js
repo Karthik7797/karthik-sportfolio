@@ -145,7 +145,7 @@ import {
     },
     {
       title: "UI Developer",
-      company_name: "Tesla",
+      company_name: "KitKat Software Solutions",
       icon: uiicon,
       iconBg: "#E6DEDD",
       date: "Aug 2021 - Sep 2022",
