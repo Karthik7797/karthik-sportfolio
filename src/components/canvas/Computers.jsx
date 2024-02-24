@@ -9,19 +9,10 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      {/* Simplify lighting */}
+      {/* Use simpler lighting */}
       <ambientLight intensity={0.5} />
-      {/* Use simpler light types */}
       <pointLight position={[5, 5, 5]} />
-      {/* Reduce shadow map size */}
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={[512, 512]}
-      />
+      {/* Render 3D model */}
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.4 : 0.75}
@@ -36,43 +27,44 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 700px)");
-    setIsMobile(mediaQuery.matches);
-
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
+    const handleResize = () => {
+      // Update isMobile state based on screen width
+      setIsMobile(window.innerWidth <= 700);
     };
 
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
 
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
+    // Initial check for mobile
+    handleResize();
+
+    // Remove event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <Canvas
       frameloop='demand'
       shadows
-      dpr={window.devicePixelRatio}
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
-          enableZoom={false} // Enable zoom only on desktop
+          enableZoom={!isMobile} // Enable zoom only on desktop
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
+        {/* Render Computers component */}
         <Computers isMobile={isMobile} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );
 };
 
 export default ComputersCanvas;
+
 
 
 
