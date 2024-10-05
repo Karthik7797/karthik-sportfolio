@@ -19,7 +19,7 @@
   display: block;
 }
 
-img[src$="threejs.svg"] {
+img[alt="Three JS"] {
  filter: invert(1)
 }
 
