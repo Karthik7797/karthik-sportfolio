@@ -35,6 +35,8 @@ import {
     project_6,
     Project_7,
     Project_8,
+    ownproject_1,
+    ownproject_2,
     wordpress,
     linkicon,
   } from "../assets";
@@ -387,5 +389,50 @@ import {
       source_code_link: "https://yaalhomestay.in/",
     },
   ];
+
+  const ownprojects = [
+    {
+      name: "Normie Agency",
+      description:
+        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      tags: [
+        {
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "mongodb",
+          color: "green-text-gradient",
+        },
+        {
+          name: "tailwind",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: ownproject_1,
+      source_code_link: "https://agency-orpin-three.vercel.app/",
+    },
+    {
+      name: "Normie Ai",
+      description:
+        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      tags: [
+        {
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "mongodb",
+          color: "green-text-gradient",
+        },
+        {
+          name: "tailwind",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: ownproject_2,
+      source_code_link: "https://normieai.vercel.app/",
+    }
+  ]
   
-  export { services, technologies, experiences, testimonials, projects };
+  export { services, technologies, experiences, testimonials, projects, ownprojects };

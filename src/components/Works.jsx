@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { linkicon } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
+import { projects, ownprojects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({
@@ -90,6 +90,26 @@ const Works = () => {
 
       <div className='mt-20 flex flex-wrap gap-7'>
         {projects.map((project, index) => (
+          <ProjectCard key={`project-${index}`} index={index} {...project} />
+        ))}
+      </div>
+
+      <motion.div variants={textVariant()} className="mt-20">
+        <h2 className={`${styles.sectionHeadText}`}>Own Projects.</h2>
+      </motion.div>
+
+      <div className='w-full flex'>
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+        >
+          Following projects showcases my skills and experience. I have used some advanced technologies like 
+          Next.js and React, Framer motion, Ai Intergration on the Following Projects.
+        </motion.p>
+      </div>
+
+      <div className='mt-20 flex flex-wrap gap-7'>
+        {ownprojects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
