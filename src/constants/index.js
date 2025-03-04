@@ -37,6 +37,7 @@ import {
     Project_8,
     ownproject_1,
     ownproject_2,
+    ownproject_3,
     wordpress,
     linkicon,
   } from "../assets";
@@ -432,6 +433,27 @@ import {
       ],
       image: ownproject_2,
       source_code_link: "https://normieai.vercel.app/",
+    },
+    {
+      name: "Crypto app",
+      description:
+        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      tags: [
+        {
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "mongodb",
+          color: "green-text-gradient",
+        },
+        {
+          name: "tailwind",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: ownproject_3,
+      source_code_link: "https://crygo-kk49.vercel.app/",
     }
   ]
   
