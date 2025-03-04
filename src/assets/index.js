@@ -47,6 +47,8 @@ import Project_8 from "./Project_8.png";
 
 import ownproject_1 from "./ownproject_1.png"
 import ownproject_2 from "./ownproject_2.png"
+import ownproject_3 from "./ownproject_3.png"
+
 
 export {
   logo,
@@ -91,6 +93,7 @@ export {
   Project_8,
   ownproject_1,
   ownproject_2,
+  ownproject_3,
   wordpress,
   linkicon,
 };
