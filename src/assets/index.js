@@ -49,6 +49,9 @@ import ownproject_1 from "./ownproject_1.png"
 import ownproject_2 from "./ownproject_2.png"
 import ownproject_3 from "./ownproject_3.png"
 
+import mobile1 from "./mobile_ui.png";
+import qr_code from "./qr_code.png";
+
 
 export {
   logo,
@@ -96,4 +99,6 @@ export {
   ownproject_3,
   wordpress,
   linkicon,
+  mobile1,
+  qr_code,
 };
